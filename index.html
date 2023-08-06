@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Razha's Website</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+    crossorigin="anonymous"
+  />
+
+  </head>
+  <body>
+    <header>
+      <nav id="navbar">
+        <a href="#About">About</a>
+        <a href="#projects">Work</a>
+        <a href="#Contact">Contact</a>
+      </nav>
+      <div id="welcome-section">
+        <h1>Razha</h1>
+      </div>
+    </header>
+    <main>
+      <section id="About">
+        <div>
+          <div class="wrapper-scroll">
+            <h2 class="scroll">Hey I am Razha</h2>
+          </div>
+          <p>a web developer.</p>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>My Projects</h2>
+        <a href="#" class="project-tile"></a>
+        <div id="my-projects"></div>
+      </section>
+
+      <section id="Contact">
+        <a id="profile-link" target="_blank"></a>
+        <h2>I'm Waiting For Message...</h2>
+        <p>How do you take your coffe? </p>
+        <div class="contact-links">
+          <a
+            href="https://www.instagram.com/razhajs/"
+            target="_blank"
+            class="btn contact-details"
+            ><i class="fab fa-instagram"></i> Instagram</a
+          >
+          <a
+            id="profile-link"
+            href="https://github.com/Razha90"
+            target="_blank"
+            class="btn contact-details"
+            ><i class="fab fa-github"></i> GitHub</a
+          >
+          <a href="mailto:razhajamsiksyah@gmail.com" class="btn contact-details"><i class="fas fa-at"></i> Send a mail</a
+          >
+          <a href="tel:0895626199020" class="btn contact-details"
+            ><i class="fas fa-mobile-alt"></i> Call me</a
+          >
+        <div></div>
+      </section>
+    </main>
+    <footer>
+      @Create By Razha 2023, Go To <a href="#">Source Code</a>
+    </footer>
+    <div id="loading-screen">
+      Loading...
+    </div>
+  </body>
+  <script>
+    window.addEventListener("load", function () {
+      const loadingScreen = document.getElementById("loading-screen");
+      setTimeout(() => {
+        loadingScreen.style.display = "none";
+      }, 2000);
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const square = entry.target.querySelector(".scroll");
+
+        if (entry.isIntersecting) {
+          square.classList.add("rightToLeft");
+          return;
+        }
+
+        square.classList.remove("rightToLeft");
+      });
+    });
+
+    observer.observe(document.querySelector(".wrapper-scroll"));
+
+    const myData = [
+      {
+        name: "Interactive Comment",
+        link: "https://interactive-comment.pages.dev/",
+        image:
+          "https://i.postimg.cc/jS98G6zx/Web-capture-5-8-2023-41416-interactive-comment-pages-dev.jpg",
+      },
+      {
+        name: "News Homepage",
+        link: "https://news-homapages-main.pages.dev/",
+        image:
+          "https://i.postimg.cc/kgsBYw8Z/Web-capture-5-8-2023-33125-news-homapages-main-pages-dev.jpg",
+      },
+      {
+        name: "Rest Contries API",
+        link: "https://rest-countries-api-9nh.pages.dev/",
+        image:
+          "https://i.postimg.cc/QdrGR3sY/Web-capture-5-8-2023-33249-rest-countries-api-dev.jpg",
+      },
+      {
+        name: "Interactive Pricing",
+        link: "https://interactive-pricecing.pages.dev/",
+        image:
+          "https://i.postimg.cc/8PhFMTCT/Web-capture-5-8-2023-3353-interactive-pricecing-pages-dev.jpg",
+      },
+      {
+        name: "To Do List",
+        link: "https://todolistfrontend.pages.dev/",
+        image:
+          "https://i.postimg.cc/8P8J77Ny/Web-capture-5-8-2023-33727-todolistfrontend-pages-dev.jpg",
+      },
+      {
+        name: "Survey Form",
+        link: "https://codepen.io/razha90/pen/ZEmyBaW",
+        image: "https://i.postimg.cc/v8cJTvzs/Web-capture-5-8-2023-4216.jpg",
+      },
+    ];
+    const projects = document.querySelector("#my-projects");
+    myData.forEach((query) => {
+      projects.innerHTML += `<div class="cards">
+        <div><img src="${query.image}"/></div>
+        <div>
+          <a href="${query.link}"><span>&lt;</span> ${query.name} <span>/&gt;</span></a>
+          </div>
+        </div>`;
+    });
+  </script>
+</html>

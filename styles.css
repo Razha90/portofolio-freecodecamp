@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@500;600;700&display=swap");
+:root {
+  --color-1: rgba(5, 9, 56, 0.8);
+  --color-2: rgb(87, 7, 69);
+  --color-3: #ea1179;
+  --color-4: #f79bd3;
+  --my-font: "Kanit", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 12px;
+}
+
+body {
+  font-family: var(--my-font);
+}
+
+header {
+  background-color: var(--color-3);
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  color: white;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  font-size: 2.1rem;
+  height: auto;
+  box-shadow: 0 -2px 10px 5px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+#navbar a {
+  padding: 1.5rem;
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  transition: 0.5s ease;
+}
+
+#navbar a:hover {
+  background-color: var(--color-4);
+  color: var(--color-3);
+}
+
+#About {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-1);
+}
+
+.scroll {
+  font-size: 4rem;
+  color: var(--color-3);
+  letter-spacing: 10px;
+  padding: 0 15px;
+  transition: 1s ease-in;
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.wrapper-scroll {
+  overflow: hidden;
+  border-left: 5px solid var(--color-3);
+}
+
+#About div p {
+  font-size: 2rem;
+  color: var(--color-4);
+  font-style: italic;
+  text-align: right;
+  padding: 0 15px;
+  border-right: 5px solid var(--color-4);
+}
+
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.rightToLeft {
+  transform: translateX(0);
+  opacity: 1;
+}
+/*-------------------------------*/
+#projects,
+#Contact {
+  width: 100%;
+  background-color: var(--color-2);
+}
+
+#projects h2 {
+  text-align: center;
+  font-size: 4rem;
+  color: white;
+  text-decoration:solid underline;
+  padding: 5rem 0;
+  letter-spacing: 0.3rem;
+}
+
+.cards img {
+  width: 250px;
+  transition: 0.5s ease-in;
+}
+
+.cards img:hover {
+  transform: scale(1.3);
+  opacity: 0.5;
+}
+
+#my-projects {
+  display: flex;
+  flex-direction: row;
+  row-gap: 3rem;
+  column-gap: 4rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 5rem;
+}
+
+#my-projects .cards div:nth-child(1) {
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards {
+  background-color: var(--color-1);
+  width: 300px;
+  text-align: center;
+}
+
+.cards a {
+  color: white;
+  text-decoration: none;
+  font-size: 2rem; 
+
+}
+
+.cards span {
+  color: var(--color-4);
+  opacity: 0;
+  transition: .5s ease-in;
+}
+
+.cards a:hover span {
+  opacity: 1;
+} 
+
+#Contact {
+  background-color: var(--color-4);
+  color: white;
+  text-align: center;
+  padding: 6rem;
+}
+
+#Contact h2 {
+  font-size: 4rem;
+}
+
+#Contact p {
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: lighter;
+  text-shadow: 2px 2px 5px black;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 1.8rem;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
+  padding-top: 2rem;
+}
+
+.contact-links a {
+  color: white;
+  text-decoration: none;
+  padding: 0 1rem;
+  opacity: 1;
+  transition: .5s ease-out;
+}
+
+.contact-links a:hover {
+  text-decoration: dashed line-through;
+  color: var(--color-3);
+  opacity: 0.5;
+}
+
+footer {
+  width: 100%;
+  text-align: right;
+  padding: 2rem;
+  border-top: 5px solid white;
+  font-size: 1.5rem;
+  color: white;
+  background-color: var(--color-2);
+}
+
+@media screen and (max-width: 441px) {
+  html {
+    font-size: 10px;
+  }
+
+}
+
+@media screen and (max-width: 551px) {
+  #navbar a{
+    padding: 0.8rem 0.3rem;
+  }
+
+  #About {
+    padding: 0 0.5rem;
+  }
+}
